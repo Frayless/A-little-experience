@@ -19,3 +19,19 @@ git commit -m "Initial commit"
 git branch -M main #确保主分支是main
 git push -u origin main
 ```
+
+Problem3:fatal:refusing to merge unrelated histories
+```
+git pull origin master --allow-unrelated-histories
+```
+fatal:Please enter a commit message to explain why this merge is necessary.
+Solution:i->insert模式，ESC，输入":wq"+enter
+
+
+Problem4: github文件上有白色箭头，无法点开。先删除其他目录下的.git文件（我记得cmake的时候也会同样报错？）
+```
+git rm --cached <file name>  #上述删除.git的文件名
+git add .
+git commit -m  "delete .git"
+git push -u origin main
+```
